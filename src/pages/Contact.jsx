@@ -1,16 +1,56 @@
-import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import Section from '../components/ui/Section';
+import SectionHeader from '../components/ui/SectionHeader'; // Ensure consistent typography
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+import imgAbstract from '../assets/images/cta-bg.png';
 import './Contact.css';
 
 const Contact = () => {
+    const [result, setResult] = useState("");
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Sending....");
+        const formData = new FormData(event.target);
+
+        formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            setResult("Form Submitted Successfully");
+            event.target.reset();
+        } else {
+            console.log("Error", data);
+            setResult(data.message);
+        }
+    };
+
     return (
         <div className="page-contact">
-            <Section className="contact-header text-center" variant="alt">
-                <h1>Contact Us</h1>
-                <p className="subtitle">Ready to get started? Get in touch with us today.</p>
+            <Section
+                className="contact-header text-center"
+                variant="dark"
+                style={{
+                    backgroundImage: `url(${imgAbstract})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundBlendMode: 'overlay',
+                    backgroundColor: 'rgba(11, 15, 25, 0.9)'
+                }}
+            >
+                <SectionHeader
+                    title="Contact Us"
+                    subtitle="Ready to elevate your property management? Get in touch."
+                    light
+                />
             </Section>
 
             <Section>

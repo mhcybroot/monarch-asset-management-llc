@@ -6,10 +6,22 @@ import './About.css';
 
 import imgMission from '../assets/images/svc-renovation-detail.png'; // Reusing high-quality asset
 
+import imgAbstract from '../assets/images/cta-bg.png';
+
 const About = () => {
     return (
         <div className="page-about">
-            <Section className="about-header text-center" variant="dark">
+            <Section
+                className="about-header text-center"
+                variant="dark"
+                style={{
+                    backgroundImage: `url(${imgAbstract})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundBlendMode: 'overlay',
+                    backgroundColor: 'rgba(11, 15, 25, 0.9)' /* Heavier text contrast */
+                }}
+            >
                 <SectionHeader
                     title="About Monarch Asset Management"
                     subtitle="Excellence in every detail. Reliability in every action."

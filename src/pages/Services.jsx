@@ -53,10 +53,21 @@ const detailedServices = [
 const Services = () => {
     return (
         <div className="page-services">
-            <Section className="services-header text-center" variant="alt">
+            <Section
+                className="services-header text-center"
+                variant="dark" /* Changed to dark for contrast with image */
+                style={{
+                    backgroundImage: `url(${imgTurn})`, /* reusing hero-bg */
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundBlendMode: 'overlay',
+                    backgroundColor: 'rgba(11, 15, 25, 0.85)'
+                }}
+            >
                 <SectionHeader
                     title="Our Services"
                     subtitle="Comprehensive asset management solutions tailored to your needs."
+                    light
                 />
             </Section>
 

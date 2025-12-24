@@ -11,15 +11,18 @@
 
 .navbar-scrolled {
     background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
+    /* Increased opacity for better text contrast/legibility */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: var(--spacing-sm) 0;
 }
 
 .dark .navbar-scrolled {
     background-color: rgba(15, 23, 42, 0.95);
     border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
 }
 
 .navbar-container {
@@ -68,7 +71,9 @@
 }
 
 .navbar-scrolled .navbar-links a {
-    color: var(--text-secondary);
+    color: var(--text-primary);
+    /* Darker contrast for light mode */
+    font-weight: 500;
     text-shadow: none;
 }
 
@@ -181,4 +186,30 @@
     .mobile-only {
         display: flex;
     }
+}
+
+/* Theme Toggle Contrast Fixes */
+.navbar:not(.navbar-scrolled) .theme-toggle {
+    color: var(--color-white) !important;
+    /* Force white on transparent dark hero */
+    border-color: transparent;
+}
+
+.navbar:not(.navbar-scrolled) .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+}
+
+.navbar-scrolled .theme-toggle {
+    color: var(--text-primary);
+}
+
+.dark .navbar-scrolled .theme-toggle {
+    color: var(--text-primary);
+}
+
+/* Active Link Underline Contrast Fix */
+.navbar-scrolled .navbar-links a.active::after {
+    background-color: var(--color-primary);
+    /* Switch to Red for better contrast on white */
 }
