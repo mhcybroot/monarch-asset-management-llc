@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from '../ui/Card';
 import Section from '../ui/Section';
+import SectionHeader from '../ui/SectionHeader';
+import Reveal from '../ui/Reveal';
 import { Star } from 'lucide-react';
 import './Testimonials.css';
 
@@ -25,10 +27,11 @@ const testimonials = [
 const Testimonials = () => {
     return (
         <Section className="testimonials">
-            <div className="section-header text-center">
-                <h2>Client Stories</h2>
-                <p>Trusted by industry leaders.</p>
-            </div>
+            <SectionHeader
+                eyebrow="Testimonials"
+                title="Client Stories"
+                subtitle="Trusted by industry leaders."
+            />
 
             <div className="testimonials-grid">
                 {testimonials.map((item, index) => (

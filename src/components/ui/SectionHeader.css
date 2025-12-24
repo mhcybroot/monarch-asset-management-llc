@@ -1,0 +1,68 @@
+.section-header {
+    margin-bottom: var(--spacing-3xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.section-header.center {
+    align-items: center;
+    text-align: center;
+}
+
+.section-header.left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Eyebrow */
+.header-eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-xs);
+    display: block;
+}
+
+/* Title */
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.section-header.light h2 {
+    color: var(--color-white);
+}
+
+/* Accent Line */
+.header-accent {
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-secondary);
+    border-radius: var(--radius-full);
+    margin: var(--spacing-sm) 0;
+}
+
+/* Subtitle */
+.header-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.section-header.light .header-subtitle {
+    color: var(--color-gray-200);
+}
+
+@media (max-width: 768px) {
+    .header-accent {
+        width: 40px;
+        height: 3px;
+    }
+}

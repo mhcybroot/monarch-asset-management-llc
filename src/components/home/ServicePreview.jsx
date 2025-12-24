@@ -2,6 +2,8 @@ import React from 'react';
 import { Home, PenTool, CheckCircle, RefreshCw } from 'lucide-react';
 import Card from '../ui/Card';
 import Section from '../ui/Section';
+import Reveal from '../ui/Reveal';
+import SectionHeader from '../ui/SectionHeader';
 import imgPreservation from '../../assets/images/service-1-preservation.png';
 import imgMaintenance from '../../assets/images/service-2-maintenance.png';
 import imgRenovation from '../../assets/images/service-3-renovation.png';
@@ -38,25 +40,28 @@ const services = [
 const ServicePreview = () => {
     return (
         <Section variant="alt" className="service-preview">
-            <div className="section-header text-center">
-                <h2>Our Core Expertise</h2>
-                <p>Comprehensive solutions for modern asset management.</p>
-            </div>
+            <SectionHeader
+                eyebrow="Expertise"
+                title="Our Core Expertise"
+                subtitle="Comprehensive solutions for modern asset management."
+            />
 
             <div className="services-grid">
                 {services.map((service, index) => (
-                    <Card key={index} className="service-card">
-                        <div className="service-image-container">
-                            <img src={service.image} alt={service.title} className="service-thumb" />
-                        </div>
-                        <div className="service-content">
-                            <div className="service-icon-wrapper">
-                                {service.icon}
+                    <Reveal key={index} delay={index * 0.15}>
+                        <Card className="service-card">
+                            <div className="service-image-container">
+                                <img src={service.image} alt={service.title} className="service-thumb" />
                             </div>
-                            <h3>{service.title}</h3>
-                            <p>{service.desc}</p>
-                        </div>
-                    </Card>
+                            <div className="service-content">
+                                <div className="service-icon-wrapper">
+                                    {service.icon}
+                                </div>
+                                <h3>{service.title}</h3>
+                                <p>{service.desc}</p>
+                            </div>
+                        </Card>
+                    </Reveal>
                 ))}
             </div>
         </Section>

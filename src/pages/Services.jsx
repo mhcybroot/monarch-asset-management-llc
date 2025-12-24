@@ -2,6 +2,8 @@ import React from 'react';
 import { Home, PenTool, RefreshCw, CheckCircle, Key } from 'lucide-react';
 import Section from '../components/ui/Section';
 import Card from '../components/ui/Card';
+import Reveal from '../components/ui/Reveal';
+import SectionHeader from '../components/ui/SectionHeader';
 import './Services.css';
 
 import imgPreservation from '../assets/images/svc-preservation-detail.png';
@@ -52,33 +54,37 @@ const Services = () => {
     return (
         <div className="page-services">
             <Section className="services-header text-center" variant="alt">
-                <h1>Our Services</h1>
-                <p className="subtitle">Comprehensive asset management solutions tailored to your needs.</p>
+                <SectionHeader
+                    title="Our Services"
+                    subtitle="Comprehensive asset management solutions tailored to your needs."
+                />
             </Section>
 
             <Section>
                 <div className="services-list">
                     {detailedServices.map((service, index) => (
-                        <div key={index} className="service-row">
-                            <div className="service-content-col">
-                                <div className="service-info">
-                                    <div className="service-icon-wrapper">{service.icon}</div>
-                                    <h2>{service.title}</h2>
-                                    <p>{service.description}</p>
+                        <Reveal key={index} width="100%">
+                            <div className="service-row">
+                                <div className="service-content-col">
+                                    <div className="service-info">
+                                        <div className="service-icon-wrapper">{service.icon}</div>
+                                        <h2>{service.title}</h2>
+                                        <p>{service.description}</p>
+                                    </div>
+                                    <div className="service-details-list">
+                                        <h3>What We Include</h3>
+                                        <ul>
+                                            {service.items.map((item, i) => (
+                                                <li key={i}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div className="service-details-list">
-                                    <h3>What We Include</h3>
-                                    <ul>
-                                        {service.items.map((item, i) => (
-                                            <li key={i}>{item}</li>
-                                        ))}
-                                    </ul>
+                                <div className="service-image-col">
+                                    <img src={service.image} alt={service.title} className="service-main-image" />
                                 </div>
                             </div>
-                            <div className="service-image-col">
-                                <img src={service.image} alt={service.title} className="service-main-image" />
-                            </div>
-                        </div>
+                        </Reveal>
                     ))}
                 </div>
             </Section>
