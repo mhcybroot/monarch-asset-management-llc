@@ -1,0 +1,66 @@
+import React from 'react';
+import { Home, PenTool, CheckCircle, RefreshCw } from 'lucide-react';
+import Card from '../ui/Card';
+import Section from '../ui/Section';
+import imgPreservation from '../../assets/images/service-1-preservation.png';
+import imgMaintenance from '../../assets/images/service-2-maintenance.png';
+import imgRenovation from '../../assets/images/service-3-renovation.png';
+import imgInspections from '../../assets/images/service-4-inspections.png';
+import './ServicePreview.css';
+
+const services = [
+    {
+        icon: <Home size={28} />,
+        image: imgPreservation,
+        title: 'Property Preservation',
+        desc: 'Securing and protecting vacant assets to maintain value and ensure insurability.'
+    },
+    {
+        icon: <PenTool size={28} />,
+        image: imgMaintenance,
+        title: 'Maintenance',
+        desc: 'Routine upkeep and emergency repairs to keep properties in optimal condition.'
+    },
+    {
+        icon: <RefreshCw size={28} />,
+        image: imgRenovation,
+        title: 'Renovation',
+        desc: 'Strategic upgrades and remodeling to maximize asset value and marketability.'
+    },
+    {
+        icon: <CheckCircle size={28} />,
+        image: imgInspections,
+        title: 'Compliance',
+        desc: 'Detailed inspections ensuring properties meet all local code and safety regulations.'
+    }
+];
+
+const ServicePreview = () => {
+    return (
+        <Section variant="alt" className="service-preview">
+            <div className="section-header text-center">
+                <h2>Our Core Expertise</h2>
+                <p>Comprehensive solutions for modern asset management.</p>
+            </div>
+
+            <div className="services-grid">
+                {services.map((service, index) => (
+                    <Card key={index} className="service-card">
+                        <div className="service-image-container">
+                            <img src={service.image} alt={service.title} className="service-thumb" />
+                        </div>
+                        <div className="service-content">
+                            <div className="service-icon-wrapper">
+                                {service.icon}
+                            </div>
+                            <h3>{service.title}</h3>
+                            <p>{service.desc}</p>
+                        </div>
+                    </Card>
+                ))}
+            </div>
+        </Section>
+    );
+};
+
+export default ServicePreview;

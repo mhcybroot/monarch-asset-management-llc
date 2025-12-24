@@ -1,0 +1,23 @@
+.section {
+    padding: var(--spacing-3xl) 0;
+    position: relative;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section-default {
+    background-color: var(--bg-primary);
+}
+
+.section-alt {
+    background-color: var(--bg-secondary);
+}
+
+.section-dark {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+}

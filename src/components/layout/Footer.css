@@ -1,0 +1,169 @@
+.footer {
+    background-color: #0B0F19;
+    /* Deeper, richer charcoal/black */
+    color: var(--color-gray-400);
+    padding: var(--spacing-3xl) 0 0 0;
+    margin-top: auto;
+    border-top: 4px solid var(--color-secondary);
+    /* Gold accent top border */
+    position: relative;
+}
+
+/* Subtle background pattern or gradient overlay could go here if supported */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 1.2fr;
+    /* Adjusted proportions */
+    gap: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+}
+
+/* Brand Section */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer-brand .footer-logo {
+    display: inline-block;
+    margin-bottom: var(--spacing-xl);
+    /* Increased for better separation */
+}
+
+.logo-image-footer {
+    height: 85px;
+    /* Large, prominent */
+    width: auto;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.98);
+    /* Clean white bg for logo pop */
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* Premium lift */
+}
+
+.footer-desc {
+    line-height: 1.7;
+    font-size: 1rem;
+    max-width: 360px;
+    color: var(--color-gray-400);
+    margin-top: var(--spacing-lg);
+    /* Explicit spacing from logo */
+    display: block;
+    /* Ensure block formatting */
+}
+
+/* Headings */
+.footer h4 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.footer h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-secondary);
+}
+
+/* Links */
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.footer a {
+    transition: all var(--transition-normal);
+    color: var(--color-gray-400);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer a:hover {
+    color: var(--color-secondary);
+    transform: translateX(4px);
+    /* Subtle slide interaction */
+}
+
+/* Contact Specifics */
+.footer-contact .info-icon {
+    color: var(--color-secondary);
+    /* Gold icons */
+    min-width: 18px;
+    margin-top: 2px;
+}
+
+.footer-contact a,
+.footer-contact span {
+    color: var(--color-gray-400);
+    line-height: 1.5;
+}
+
+.mailing-address {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mailing-address span {
+    font-size: 0.9rem;
+    color: var(--color-gray-500);
+    font-style: italic;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    background-color: #05080F;
+    /* Even darker for bottom bar */
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-gray-600);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom p {
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .footer-brand {
+        align-items: flex-start;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding-bottom: var(--spacing-xl);
+    }
+
+    .logo-image-footer {
+        height: 70px;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
+}
