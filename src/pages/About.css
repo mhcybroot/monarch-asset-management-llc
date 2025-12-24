@@ -1,5 +1,8 @@
-.page-about {
-    padding-top: 80px;
+/* Page About */
+.about-header {
+    padding-top: 140px !important;
+    /* Account for fixed navbar */
+    padding-bottom: var(--spacing-3xl);
 }
 
 .about-header {

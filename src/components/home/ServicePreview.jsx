@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, PenTool, CheckCircle, RefreshCw } from 'lucide-react';
+import { Home, PenTool, RefreshCw } from 'lucide-react';
 import Card from '../ui/Card';
 import Section from '../ui/Section';
 import Reveal from '../ui/Reveal';
@@ -7,7 +7,6 @@ import SectionHeader from '../ui/SectionHeader';
 import imgPreservation from '../../assets/images/service-1-preservation.png';
 import imgMaintenance from '../../assets/images/service-2-maintenance.png';
 import imgRenovation from '../../assets/images/service-3-renovation.png';
-import imgInspections from '../../assets/images/service-4-inspections.png';
 import './ServicePreview.css';
 
 const services = [
@@ -28,12 +27,6 @@ const services = [
         image: imgRenovation,
         title: 'Renovation',
         desc: 'Strategic upgrades and remodeling to maximize asset value and marketability.'
-    },
-    {
-        icon: <CheckCircle size={28} />,
-        image: imgInspections,
-        title: 'Compliance',
-        desc: 'Detailed inspections ensuring properties meet all local code and safety regulations.'
     }
 ];
 

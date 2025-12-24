@@ -1,5 +1,8 @@
-.page-contact {
-    padding-top: 80px;
+/* Page Contact */
+.contact-header {
+    padding-top: 140px !important;
+    /* Account for fixed navbar */
+    padding-bottom: var(--spacing-3xl);
 }
 
 .contact-header {
